@@ -2,9 +2,9 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import  {mapImageList, changeMemePicture, enablePhotoUpload,  downloadImg} from '../lib/script.js'
-import { useState } from 'react'
+
 export default function Home() {
-  const [imageList] = useState(mapImageList())
+  let imageList = mapImageList()
   return (
     <div className={styles.container}>
       <Head>
@@ -14,7 +14,7 @@ export default function Home() {
       </Head>
         <div className={styles.app}>
             <div className={styles.logo}>
-                <Image src="./pictures/MemeManiaLogo.png" alt="" width="150" />
+                <Image src="/pictures/MemeManiaLogo.png" alt="Meme" width="150" height="150" />
              </div> 
              <div className={styles.appImage} id="downlabled">
                  <textarea name="textTop" className={styles.textBox} placeholder="Digite sua frase" aria-multiline="true" id="" ></textarea>
@@ -23,14 +23,10 @@ export default function Home() {
              </div>
              <div className={styles.ferramentas}>
             <div>
-                <select  className={styles.memeslist} id="memes-list" onChange={(e) => changeMemePicture(e.target.value )}>
+              <select  className={styles.memeslist} id="memes-list" onChange={(e) => changeMemePicture(e.target.value )}>
                 <option value="../pictures/default.jpg">Selecione</option>
-                {imageList.map(function(d){
-                  return (
-                    <option value={d.path}>{d.name}</option>
-                  )
-                  })}       
-                </select>
+                    {imageList.map((imageMeme) => <option key={imageMeme.name} value={imageMeme.path}>{imageMeme.name}</option>)}
+              </select>
              </div>    
              <div>
              <input type="file" className={styles.imageInput}  id="image-input" accept="image/jpeg, image/png, image/jpg" onChange={(e) => enablePhotoUpload()}/>
