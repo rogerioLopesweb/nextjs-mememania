@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import  {mapImageList, changeMemePicture, enablePhotoUpload,  downloadImg} from '../lib/script.js'
 import { useState } from 'react'
@@ -13,7 +14,7 @@ export default function Home() {
       </Head>
         <div className={styles.app}>
             <div className={styles.logo}>
-                <img src="./pictures/MemeManiaLogo.png" alt="" width="150" />
+                <Image src="./pictures/MemeManiaLogo.png" alt="" width="150" />
              </div> 
              <div className={styles.appImage} id="downlabled">
                  <textarea name="textTop" className={styles.textBox} placeholder="Digite sua frase" aria-multiline="true" id="" ></textarea>
