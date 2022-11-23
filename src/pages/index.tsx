@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import  {mapImageList, changeMemePicture, enablePhotoUpload,  downloadImg} from '../lib/script.js'
 import { useState } from 'react'
