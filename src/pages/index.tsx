@@ -2,9 +2,11 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import  {mapImageList, changeMemePicture, enablePhotoUpload,  downloadImg} from '../lib/script.js'
+import React,{useState} from 'react';
 
 export default function Home() {
   let imageList = mapImageList()
+
   return (
     <div className={styles.container}>
       <Head>

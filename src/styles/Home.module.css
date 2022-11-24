@@ -7,7 +7,6 @@
   align-items: center;
   width: 100%;
   height: 100%;
-  
 }
 .logo{
   display:flex;
@@ -103,9 +102,19 @@
   width: 100%;
   border: 2px solid rgb(209, 164, 15);
   border-radius: 10px;
+  cursor: auto;
+  cursor: pointer;
 }
 @media (max-width: 600px) {
+  .app{
+    padding: 2px;
+    margin: 0;
+ }
+ .displayImage{
  
+  background-color:#111;
+}
+
 }
 
 @media (prefers-color-scheme: dark) {
