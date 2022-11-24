@@ -14,6 +14,26 @@ export  function mapImageList(){
             "name": "Funny cat",
             "path": "../pictures/funny-cat1.jpg" 
         }
+        ,
+        {
+            "name": "Dog chick",
+            "path": "../pictures/dog-chick.jpg" 
+        }
+        ,
+        {
+            "name": "Palhaço olhando para cima",
+            "path": "../pictures/palhado-olhando-para-cima.jpg" 
+        }
+        ,
+        {
+            "name": "Laranja Careta",
+            "path": "../pictures/laranja-careta.jpg" 
+        }
+        ,
+        {
+            "name": "Rei quer picanha",
+            "path": "../pictures/rei-ea-picanha.jpg" 
+        }
     ]
 
     return memesObject;
@@ -46,10 +66,7 @@ export function enablePhotoUpload(){
   
 }
 export  function main(){
-    const memesImageList =  mapImageList()
-     createGallery(memesImageList)
-     changeMemePicture(memesImageList[0].path)
-   
+    
     document.getElementById("btn-download").onclick = () =>{
         const screenshotPrint =  document.querySelector("#downlabled")
         html2canvas(screenshotPrint).then((canvas)=>{
