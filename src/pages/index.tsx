@@ -12,6 +12,7 @@ export default function Home() {
       <Head>
         <title>MemeMania</title>
         <meta name="description" content="Crie seus memes divertas-e com resposabilidade!" />
+        <meta name="theme-color" content="#872e4e" media="(prefers-color-scheme: dark)" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
         <div className={styles.app}>
