@@ -32,7 +32,10 @@ export default function Home() {
               </select>
              </div>    
              <div>
-             <input type="file" className={styles.imageInput}  id="image-input" accept="image/jpeg, image/png, image/jpg" onChange={(e) => enablePhotoUpload()}/>
+             <input type="file" className={styles.imageInput}  id="image-input" accept="image/jpeg, image/png, image/jpg" 
+             onChange={(e) => enablePhotoUpload()}
+             onClick={(e)=> {e.currentTarget.value = ""}}
+             />
              </div>
              <div className={styles.download}>
                  <button className={styles.btnDownload} id="btn-download" onClick={(e) => downloadImg()}>Download</button>

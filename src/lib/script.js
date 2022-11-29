@@ -54,16 +54,12 @@ export  function changeMemePicture(photo){
 }
 export function enablePhotoUpload(){
     const imageInput = document.querySelector("#image-input")
-    imageInput.addEventListener("change", function(){
         const reader = new FileReader()
         reader.addEventListener("load", () => {
             const uploadImage = reader.result
             changeMemePicture(uploadImage)
         })
-        reader.readAsDataURL(this.files[0]);
-    })
-
-  
+        reader.readAsDataURL(imageInput.files[0]);
 }
 export  function main(){
     
@@ -84,15 +80,13 @@ export  function main(){
 
 
 export function downloadImg(){
-    document.getElementById("btn-download").onclick = () =>{
-        const screenshotPrint =  document.querySelector("#downlabled")
-        html2canvas(screenshotPrint).then((canvas)=>{
-            const base64Image = canvas.toDataURL("image/png")
-            let anchor = document.createElement("a")
-            anchor.setAttribute("href", base64Image)
-            anchor.setAttribute("download", "my-meme.png")
-            anchor.click()
-            anchor.remove()
-        })
-    }
+    const screenshotPrint =  document.querySelector("#downlabled")
+    html2canvas(screenshotPrint).then((canvas)=>{
+        const base64Image = canvas.toDataURL("image/png")
+        let anchor = document.createElement("a")
+        anchor.setAttribute("href", base64Image)
+        anchor.setAttribute("download", "my-meme.png")
+        anchor.click()
+        anchor.remove()
+    })
 }
